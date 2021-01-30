@@ -23,6 +23,18 @@ public class Stove {
 		for (int i=0; i<NUM_BURNERS; i++)
 			burners.add(new Burner());
 	}
+	public Stove() 
+	{
+		burners = new ArrayList<Burner>();	
+		for (int i=0; i<NUM_BURNERS; i++)
+			burners.add(new Burner());
+	}
+	public Stove() 
+	{
+		burners = new ArrayList<Burner>();	
+		for (int i=0; i<NUM_BURNERS; i++)
+			burners.add(new Burner());
+	}
 	
 	/**
 	 * Display the current stove status
