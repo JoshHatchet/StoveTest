@@ -1,4 +1,5 @@
 
 public class Burner {
-	// fix
+	private String stuff = "Void Stuff";
+	stuff = "change";
 }
