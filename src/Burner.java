@@ -4,6 +4,9 @@ public class Burner {
 	public final static int TIME_DURATION = 2;
 	Setting mySetting = Setting.OFF;
 	Temperature myTemperature = Temperature.COLD;
+	private int status = 0;
+	private int settingStatus = 0;
+	
 	
 	
 	public enum Temperature{
@@ -37,6 +40,7 @@ public class Burner {
 			mySetting = Setting.MEDIUM;
 			break;
 		}
+		timer = TIME_DURATION;
 	}
 	
 	public void plusButton() {
@@ -54,6 +58,7 @@ public class Burner {
 		case HIGH:
 			break;
 		}
+		timer = TIME_DURATION;
 	}
 	
 	
@@ -73,10 +78,81 @@ public class Burner {
 			System.out.println("[" + this.mySetting + "].....VERY HOT! DON'T TOUCH!");
 			break;
 		}
-	}
 	
+	}
+	public void getStatus() {
+		
+		if(myTemperature == Temperature.COLD) {
+			status = 1;
+		} 
+		if(myTemperature == Temperature.WARM) {
+			status = 2;
+		} 
+		if(myTemperature == Temperature.HOT) {
+			status = 3;
+		} 
+		if(myTemperature == Temperature.BLAZING) {
+			status = 4;
+		} 
+		if(mySetting == Setting.OFF) {
+			settingStatus = 1;
+		}
+		if(mySetting == Setting.LOW) {
+			settingStatus = 2;
+		}
+		if(mySetting == Setting.MEDIUM) {
+			settingStatus = 3;
+		}
+		if(mySetting == Setting.HIGH) {
+			settingStatus = 4;
+		}
+		
+		
+	}
 	public void updateTemperature() {
-		//todo
+		Temperature current = myTemperature;
+		if(timer == 0) {
+			getStatus();
+			switch(current) {
+			case COLD:
+				if(mySetting == Setting.OFF) {
+					break;
+				}
+				myTemperature = Temperature.WARM;
+				break;
+			case WARM:
+				if(settingStatus == 1) {
+					myTemperature = Temperature.COLD;
+				} 
+				if(settingStatus == 2) {
+					break;
+				}
+				if(settingStatus > 2) {
+					myTemperature = Temperature.HOT;
+				}
+				break;
+			case HOT:
+				if(settingStatus < 3) {
+					myTemperature = Temperature.WARM;
+				} 
+				if(settingStatus == 3) {
+					break;
+				}
+				if(settingStatus > 3) {
+					myTemperature = Temperature.BLAZING;
+				}
+				break;
+			case BLAZING:
+				if(settingStatus != 4) {
+					myTemperature = Temperature.HOT;
+				}
+				break;
+			}
+			timer = TIME_DURATION;
+		}
+		if(timer != 0) {
+			timer--;
+		}
 	}
 	
 	
