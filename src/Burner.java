@@ -1,6 +1,6 @@
 
 public class Burner {
-	
+	private int timer = 0;
 	public final static int TIME_DURATION = 2;
 	Setting mySetting = Setting.OFF;
 	Temperature myTemperature = Temperature.COLD;
@@ -76,7 +76,7 @@ public class Burner {
 	}
 	
 	public void updateTemperature() {
-		
+		//todo
 	}
 	
 	
