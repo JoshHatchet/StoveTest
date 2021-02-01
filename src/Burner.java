@@ -7,8 +7,19 @@ public class Burner {
 	
 	
 	public enum Temperature{
-		BLAZING, HOT, WARM, COLD;
+		BLAZING("BLAZING"), HOT("HOT"), WARM("WARM"), COLD("COLD");
+		private String string;
+		Temperature (String string){
+			this.string = string;
+		}
+		public String toString() {
+			return string;
+		}
+	
 		
+	}
+	public String getTemperature() {
+		return myTemperature.toString();
 	}
 	
 	public void minusButton() {
@@ -46,8 +57,27 @@ public class Burner {
 	}
 	
 	
+	public void display() {
+		Setting current = mySetting;
+		switch(current) {
+		case OFF:
+			System.out.println("[" + this.mySetting + "].....cooool");
+			break;
+		case LOW:
+			System.out.println("[" + this.mySetting + "].....warm");
+			break;
+		case MEDIUM:
+			System.out.println("[" + this.mySetting + "].....CAREFUL");
+			break;
+		case HIGH:
+			System.out.println("[" + this.mySetting + "].....VERY HOT! DON'T TOUCH!");
+			break;
+		}
+	}
 	
-	
+	public void updateTemperature() {
+		
+	}
 	
 	
 	
