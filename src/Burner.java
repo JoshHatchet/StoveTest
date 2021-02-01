@@ -19,7 +19,7 @@ public class Burner {
 		
 	}
 	public String getTemperature() {
-		return myTemperature.toString();
+		return mySetting.toString();
 	}
 	
 	public void minusButton() {
