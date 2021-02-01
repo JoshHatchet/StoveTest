@@ -8,7 +8,9 @@ public class Burner {
 	private int settingStatus = 0;
 	
 	
-	
+	/**
+	 * Represents Temperature
+	 */
 	public enum Temperature{
 		BLAZING("BLAZING"), HOT("HOT"), WARM("WARM"), COLD("COLD");
 		private String string;
