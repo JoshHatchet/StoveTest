@@ -4,12 +4,10 @@ public class Burner {
 	public final static int TIME_DURATION = 2;
 	Setting mySetting = Setting.OFF;
 	Temperature myTemperature = Temperature.COLD;
-	private int status = 0;
 	private int settingStatus = 0;
 	
-	
 	/**
-	 * Represents Temperature
+	 * Represents Temperature of burner
 	 */
 	public enum Temperature{
 		BLAZING("BLAZING"), HOT("HOT"), WARM("WARM"), COLD("COLD");
@@ -20,13 +18,15 @@ public class Burner {
 		public String toString() {
 			return string;
 		}
-	
-		
 	}
+	
 	public String getTemperature() {
-		return mySetting.toString();
+		return myTemperature.toString();
 	}
 	
+	/**
+	 * Lowers the Setting of the burner
+	 */
 	public void minusButton() {
 		Setting current = mySetting;
 		switch(current) {
@@ -45,6 +45,9 @@ public class Burner {
 		timer = TIME_DURATION;
 	}
 	
+	/**
+	 * Increases the Setting of the burner
+	 */
 	public void plusButton() {
 		Setting curr = mySetting;
 		switch(curr) {
@@ -63,39 +66,45 @@ public class Burner {
 		timer = TIME_DURATION;
 	}
 	
-	
+	/**
+	 * Displays the setting and temperature of burner
+	 */
 	public void display() {
 		Setting current = mySetting;
 		switch(current) {
 		case OFF:
-			System.out.println("[" + this.mySetting + "].....cooool");
+			System.out.print("[" + this.mySetting + "]");
 			break;
 		case LOW:
-			System.out.println("[" + this.mySetting + "].....warm");
+			System.out.print("[" + this.mySetting + "]");
 			break;
 		case MEDIUM:
-			System.out.println("[" + this.mySetting + "].....CAREFUL");
+			System.out.print("[" + this.mySetting + "]");
 			break;
 		case HIGH:
-			System.out.println("[" + this.mySetting + "].....VERY HOT! DON'T TOUCH!");
+			System.out.print("[" + this.mySetting + "]");
 			break;
 		}
-	
+		switch(myTemperature) {
+		case COLD:
+			System.out.println(".....cooool");
+			break;
+		case WARM:
+			System.out.println(".....warm");
+			break;
+		case HOT:
+			System.out.println(".....CAREFUL");
+			break;
+		case BLAZING:
+			System.out.println(".....VERY HOT! DON'T TOUCH!");
+			break;
+		}
 	}
+	
+	/**
+	 * sets the setting to an integer, that way it can be used in inequalities
+	 */
 	public void getStatus() {
-		
-		if(myTemperature == Temperature.COLD) {
-			status = 1;
-		} 
-		if(myTemperature == Temperature.WARM) {
-			status = 2;
-		} 
-		if(myTemperature == Temperature.HOT) {
-			status = 3;
-		} 
-		if(myTemperature == Temperature.BLAZING) {
-			status = 4;
-		} 
 		if(mySetting == Setting.OFF) {
 			settingStatus = 1;
 		}
@@ -108,27 +117,25 @@ public class Burner {
 		if(mySetting == Setting.HIGH) {
 			settingStatus = 4;
 		}
-		
-		
 	}
+	
+	/**
+	 * updates the temperature based on the current temperature and the setting
+	 */
 	public void updateTemperature() {
 		Temperature current = myTemperature;
-		if(timer == 0) {
+		if(timer == 1) {
 			getStatus();
 			switch(current) {
 			case COLD:
-				if(mySetting == Setting.OFF) {
-					break;
+				if(mySetting != Setting.OFF) {
+					myTemperature = Temperature.WARM;
 				}
-				myTemperature = Temperature.WARM;
 				break;
 			case WARM:
 				if(settingStatus == 1) {
 					myTemperature = Temperature.COLD;
 				} 
-				if(settingStatus == 2) {
-					break;
-				}
 				if(settingStatus > 2) {
 					myTemperature = Temperature.HOT;
 				}
@@ -137,9 +144,6 @@ public class Burner {
 				if(settingStatus < 3) {
 					myTemperature = Temperature.WARM;
 				} 
-				if(settingStatus == 3) {
-					break;
-				}
 				if(settingStatus > 3) {
 					myTemperature = Temperature.BLAZING;
 				}
@@ -152,11 +156,8 @@ public class Burner {
 			}
 			timer = TIME_DURATION;
 		}
-		if(timer != 0) {
+		else {
 			timer--;
 		}
 	}
-	
-	
-	
 }

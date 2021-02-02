@@ -33,7 +33,7 @@ public class Stove {
 		boolean redLightWarning = false;
 		for(Burner currBurner: burners) {
 			currBurner.display();
-			if(currBurner.getTemperature() == "+++") {
+			if(currBurner.getTemperature() == "BLAZING") {
 				redLightWarning = true;
 			}
 		}
