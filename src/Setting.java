@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author Joshua Bordick and Mark Shonbeck 
+ * 2/1/21
+ *
+ */
 public enum Setting {
 	OFF("---"), LOW("--+"), MEDIUM("-++"), HIGH("+++");
 	

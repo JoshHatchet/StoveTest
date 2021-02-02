@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author Joshua Bordick and Mark Shonbeck
+ * 2/1/21
+ *
+ */
 public class Burner {
 	private int timer = 0;
 	public final static int TIME_DURATION = 2;
@@ -6,7 +11,11 @@ public class Burner {
 	Temperature myTemperature = Temperature.COLD;
 	private int status = 0;
 	private int settingStatus = 0;
-	
+	/**
+	 * 
+	 * enum for temperature with toString method 
+	 *
+	 */
 	
 	
 	public enum Temperature{
@@ -21,10 +30,16 @@ public class Burner {
 	
 		
 	}
+	/**
+	 * 
+	 * set up getter to get state
+	 */
 	public String getTemperature() {
 		return mySetting.toString();
 	}
-	
+	/**
+	 * method to change the setting down
+	 */
 	public void minusButton() {
 		Setting current = mySetting;
 		switch(current) {
@@ -42,7 +57,9 @@ public class Burner {
 		}
 		timer = TIME_DURATION;
 	}
-	
+	/**
+	 * method to change setting up
+	 */
 	public void plusButton() {
 		Setting curr = mySetting;
 		switch(curr) {
@@ -61,7 +78,9 @@ public class Burner {
 		timer = TIME_DURATION;
 	}
 	
-	
+	/**
+	 * display method for stove display
+	 */
 	public void display() {
 		Setting current = mySetting;
 		switch(current) {
@@ -80,6 +99,10 @@ public class Burner {
 		}
 	
 	}
+	/**
+	 * get status variable to use for stove logic
+	 * use status for stove heart beat
+	 */
 	public void getStatus() {
 		
 		if(myTemperature == Temperature.COLD) {
@@ -109,6 +132,10 @@ public class Burner {
 		
 		
 	}
+	/**
+	 * logic for temperature 
+	 * this uses the status to check if the stove is warming up or cooling down
+	 */
 	public void updateTemperature() {
 		Temperature current = myTemperature;
 		if(timer == 0) {

@@ -29,6 +29,9 @@ public class Stove {
 	 *  
 	 **** You must write the following method ****
 	 */
+	/**
+	 * this logic block is used to display the red light warning if a burner is too hot
+	 */
 	public void displayStove() {
 		boolean redLightWarning = false;
 		for(Burner currBurner: burners) {
