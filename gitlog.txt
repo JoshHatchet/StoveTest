@@ -69,3 +69,98 @@ Author: JoshHatchet <joshbordick@gmail.com>
 Date:   Sat Jan 30 14:37:52 2021 -0700
 
     Created Burner Class
+commit 98da4b56832d7cf258cca188f0aa4dcfd790a01b
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 15:58:13 2021 -0700
+
+    fixes
+
+commit f6ff310692713325f987899b1c3b18cb512f3b19
+Author: JoshHatchet <71793900+JoshHatchet@users.noreply.github.com>
+Date:   Sat Jan 30 14:50:14 2021 -0700
+
+    Initial commit
+
+commit 98e8025e63a98d28e36ed908613b0c881722c5ca
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 15:32:50 2021 -0700
+
+    Finished Burner.java methods and implimented logic for update temperature
+
+commit 7291effd16397d9b47c194b002d2cea6d5588413
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 12:51:51 2021 -0700
+
+     update
+
+commit 8c65245e412e4865ffc07bc27fa2d127a50bdaab
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 12:29:10 2021 -0700
+
+    fixed Buner methods
+
+commit a1cb75fde4b2cc2128a9dbd6bbdde8c049223479
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 11:15:43 2021 -0700
+
+    updated temperature getting to work properly
+
+commit 6ed3136e83a6562445e469a0c92d239efefcd449
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 11:09:59 2021 -0700
+
+    Multiple methods added to Burner.java, Test cases not passed yet
+
+commit eba9635c985fdaf91bf0456436ca85481b9a69ad
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 10:44:11 2021 -0700
+
+    updated minus and plus buttons in Burner.java
+
+commit 909e71d4c6eef03efa3a9c3343661596657ab16f
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 10:11:00 2021 -0700
+
+    Completed enum type Setting and methods
+
+commit 72c4e847e0d13607c908c5f906d0c53e617778e5
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Mon Feb 1 10:07:01 2021 -0700
+
+    Added Setting Enum type and complted methods within
+
+commit 69156a352e321c44b042a0488b87e66ac0e755b2
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 15:16:55 2021 -0700
+
+    Adding Enum Temperature
+
+commit 402e0df8505d941a85d01f32240c44bea89c04ff
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 14:59:33 2021 -0700
+
+    New comment
+
+commit e443ebee8b0da562033b9558951b3798e458f9d5
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 14:52:48 2021 -0700
+
+    Intitial Commit
+
+commit a3aeda690301466c40d6a473bf2e8286a10aad81
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 14:43:13 2021 -0700
+
+    Fixed Stve Class functionality
+
+commit 418b66c216c9397ea14ac0e6483307f23b1f6008
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 14:40:47 2021 -0700
+
+    New changes to stove.java
+
+commit 6f7b1d39da212c4314e3f67ff6c928018209ef1f
+Author: JoshHatchet <joshbordick@gmail.com>
+Date:   Sat Jan 30 14:37:52 2021 -0700
+
+    Created Burner Class
